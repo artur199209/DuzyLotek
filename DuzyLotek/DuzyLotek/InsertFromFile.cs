@@ -8,49 +8,31 @@ using System.Collections.Generic;
 
 namespace DuzyLotek
 {
-    public class InsertFromFile
+    public class InsertFromFile:FileReader
     {
+		public static void readFromFileAndInsert(List<String> listofscores)
+		{
+			FileReader.insertDataToDB(listofscores);
+			MessageBox.Show("Dane z pliku zostały wprowadzone.");
+		}
+
         public static int insertDataFromFile()
         {
 			try
 			{
-				List<string> lines = returnAllLines();
-
+				List<string> listofscores = returnAllLines();
 				string sqldelete = "delete from wyniki;";
 				SqlCommand commanddelete = new SqlCommand(sqldelete, DatabaseConnect.conn);
 				commanddelete.ExecuteNonQuery();
 
-				foreach (string line in lines)
-				{
-					string[] elements = line.Split(' ');
-					string[] numbers = elements[2].Split(',');
-					string date = elements[1];
-					string date2 = "";
-
-					for (int i = 6; i < 10; i++)
-					{
-						date2 = date2 + date[i];
-					}
-					date2 = date2 + "-" + date[3] + date[4] + "-" + date[0] + date[1];
-
-					string sql = "insert into wyniki values (@data, @liczba1,@liczba2,@liczba3,@liczba4,@liczba5,@liczba6);";
-					SqlCommand command = new SqlCommand(sql, DatabaseConnect.conn);
-
-					command.Parameters.AddWithValue("@data", date2);
-					command.Parameters.AddWithValue("@liczba1", numbers[0]);
-					command.Parameters.AddWithValue("@liczba2", numbers[1]);
-					command.Parameters.AddWithValue("@liczba3", numbers[2]);
-					command.Parameters.AddWithValue("@liczba4", numbers[3]);
-					command.Parameters.AddWithValue("@liczba5", numbers[4]);
-					command.Parameters.AddWithValue("@liczba6", numbers[5]);
-					command.ExecuteNonQuery();
-				}
-				MessageBox.Show("Dane z pliku zostały wprowadzone.");
+				readFromFileAndInsert(listofscores);
 			}
-			catch (Exception ex) { }			
+			catch (Exception ex) {
+				MessageBox.Show("Błąd" + ex.Message);
+			}
             return 1;
         }
-       
+
 		public static List<string> returnAllLines()
 		{
 			List<String> lineList = new List<string>();

@@ -36,4 +36,6 @@ D:\projekty vs2012\DuzyLotek\DuzyLotek\bin\Debug\System.Reactive.PlatformService
 D:\projekty vs2012\DuzyLotek\DuzyLotek\obj\Debug\DuzyLotek.exe
 D:\projekty vs2012\DuzyLotek\DuzyLotek\obj\Debug\DuzyLotek.pdb
 D:\projekty vs2012\DuzyLotek\DuzyLotek\bin\Debug\dl.txt
+D:\projekty vs2012\DuzyLotek\DuzyLotek\bin\Debug\nunit.framework.dll
+D:\projekty vs2012\DuzyLotek\DuzyLotek\bin\Debug\nunit.framework.xml
 D:\projekty vs2012\DuzyLotek\DuzyLotek\obj\Debug\DuzyLotek.csprojResolveAssemblyReference.cache

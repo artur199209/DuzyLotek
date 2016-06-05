@@ -14,8 +14,10 @@ namespace DuzyLotek
            Random rand = new Random();
            string sc = "";
            int[] numbers = new int[n];
-           for (int i = 0; i < n; i++)
-               numbers[i] = i + 1;
+		   for (int i = 0; i < n; i++)
+		   {
+			   numbers[i] = i + 1;
+		   }
 
            for (int i = 0; i < k; i++)
            {

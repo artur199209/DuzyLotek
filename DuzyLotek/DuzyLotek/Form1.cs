@@ -22,6 +22,16 @@ namespace DuzyLotek
            });
         }
 
+		public String returnTextFromlastScoresDate()
+		{
+			return lastScoresDate.Text;
+		}
+
+		public String returnTextFromlastScores()
+		{
+			return lastScores.Text;
+		}
+
         private void drawScores_Click(object sender, EventArgs e)
         {
 			MessageBox.Show(randomScores(49, 6));

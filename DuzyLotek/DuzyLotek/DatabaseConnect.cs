@@ -10,7 +10,7 @@ namespace DuzyLotek
        
         public readonly static SqlConnection conn = new SqlConnection(connectionString);
 		
-        private DatabaseConnect()
+        public DatabaseConnect()
         {
         }
 
